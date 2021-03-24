@@ -4,7 +4,7 @@ introduction
 =======
 In this thesis, we propose a method for describong short videos with diverse sentences. we use encoder-decoder framework as baseline, and use a method for embedding the sentence syntax in a vector to train the model.  
 This syntex vector is either sentence length (1d vector) or POS vector(encoded with a variational auto-encoder-VAE).  
-We use MSRVTT and MSVD datasets to test our method.   
+We use MSRVTT and MSVD datasets to test our method. Pretrained Resnet(+LSTM) and I3D networks are used for static and dynamic feature extraction    
 code is available and requrements & tutorials are given below. 
 
 requirements
@@ -28,12 +28,13 @@ optional arguments:
 **--snrio**, type=str,default = 'normal'  
 \# code scenario:  
 + normal(encoder-decoder)  
-+ slen 
-+ pos 
-+ e2epos 
++ slen (train the model using sentence length-as one of decoder inputs, test with a range of sentence lengths)
++ pos (train the model using POS vector-as one of decoder inputs, test with random normal POS vectors)
++ e2epos (train the model using POS vector, end to end-as one of decoder inputs)
 + trainpos 
 + traine2epos 
-+ slen_cte  
++ slen_cte   
+
 **--dataset**, type=str,default = 'msrvtt' # msrvtt or msvd  
 **--lastmodel** name of last saved model or '' or 'nosave'  
 
