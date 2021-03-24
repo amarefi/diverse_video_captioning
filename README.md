@@ -12,11 +12,24 @@ requirements
 + python 3
 + tensorflow 2.1
 + Microsoft COCO evaluation library [link](https://github.com/tylin/coco-caption) (use cocoeval.py and pycocoevalcap folder in the same address as capsc13XX.py files)
-+ 
++ sklearn and other common packages
 
 how to use the code
 ========
-hello 
+e.g. : python capsc13main.py server 1 --snrio trainpos --lastmodel 202101281638_15
+arguments:
+**where**,help="directory" # 'home' or 'server'
+**epochs**,type=int
+**--posepoch**, type=int, default=7 # it's optional
+**--cpu**, action="store_true", default=False
+**--silent**, action="store_false", default=True
+**--notrain**, action="store_true", default=False 
+**--snrio**, type=str,default = 'normal'
+**--dataset**, type=str,default = 'msrvtt'
+**--lastmodel** name of last saved model or '' or 'nosave'
+
+
+
 
 code structure 
 ========
