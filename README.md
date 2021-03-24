@@ -9,7 +9,9 @@ code is available and requrements & tutorials are given below.
 
 requirements
 ========
-hi
++ python 3
++ tensorflow 2.1
++ Microsoft COCO evaluation library [cocolink](https://github.com/tylin/coco-caption)
 
 how to use the code
 ========
@@ -48,11 +50,11 @@ citation
 
 If you use this code base in your work, please cite
 
-\@article{DiverseVideoCaptioningPOS,
-  title={Diverse Video Captioning using RNNs and POS},
-  author={Amirhossein Arefipour and Hamid Behrouzi and Hoda Mohammadzade},
-  year={2021},
-  publisher={Sharif University of Technology, Iran}
+\@article{DiverseVideoCaptioningPOS,  
+  title={Diverse Video Captioning using RNNs and POS},  
+  author={Amirhossein Arefipour and Hamid Behrouzi and Hoda Mohammadzade},  
+  year={2021},  
+  publisher={Sharif University of Technology, Iran}  
 }
 
 contact
