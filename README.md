@@ -11,7 +11,8 @@ requirements
 ========
 + python 3
 + tensorflow 2.1
-+ Microsoft COCO evaluation library [cocolink](https://github.com/tylin/coco-caption)
++ Microsoft COCO evaluation library [link](https://github.com/tylin/coco-caption) (use cocoeval.py and pycocoevalcap folder in the same address as capsc13XX.py files)
++ 
 
 how to use the code
 ========
