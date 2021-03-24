@@ -25,16 +25,16 @@ optional arguments:
 **--cpu**, action="store_true", default=False # do the processing without GPU   
 **--silent**, action="store_false", default=True # dont print extra info (e.g. epoch number)  
 **--notrain**, action="store_true", default=False # do the processing just for 100 batches (used for debugging)   
-**--snrio**, type=str,default = 'normal' 
-\# code scenario: 
+**--snrio**, type=str,default = 'normal'  
+\# code scenario:  
 + normal(encoder-decoder)  
 + slen 
 + pos 
 + e2epos 
 + trainpos 
 + traine2epos 
-+ slen_cte
-**--dataset**, type=str,default = 'msrvtt'  
++ slen_cte  
+**--dataset**, type=str,default = 'msrvtt' # msrvtt or msvd  
 **--lastmodel** name of last saved model or '' or 'nosave'  
 
 
