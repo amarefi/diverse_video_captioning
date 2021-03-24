@@ -16,17 +16,26 @@ requirements
 
 how to use the code
 ========
-e.g. : python capsc13main.py server 1 --snrio trainpos --lastmodel 202101281638_15
-arguments:
-**where**,help="directory" # 'home' or 'server'
-**epochs**,type=int
-**--posepoch**, type=int, default=7 # it's optional
-**--cpu**, action="store_true", default=False
-**--silent**, action="store_false", default=True
-**--notrain**, action="store_true", default=False 
-**--snrio**, type=str,default = 'normal'
-**--dataset**, type=str,default = 'msrvtt'
-**--lastmodel** name of last saved model or '' or 'nosave'
+e.g. : python capsc13main.py server 1 --snrio trainpos --lastmodel 202101281638_15  
+arguments:  
+**where**,help="directory" # 'home' or 'server'  
+**epochs**,type=int, # number of training epochs (for encoder-decoder model)  
+optional arguments:  
+**--posepoch**, type=int, default=7 # (epochs for caption_scorer model)  
+**--cpu**, action="store_true", default=False # do the processing without GPU   
+**--silent**, action="store_false", default=True # dont print extra info (e.g. epoch number)  
+**--notrain**, action="store_true", default=False # do the processing just for 100 batches (used for debugging)   
+**--snrio**, type=str,default = 'normal' 
+\# code scenario: 
++ normal(encoder-decoder)  
++ slen 
++ pos 
++ e2epos 
++ trainpos 
++ traine2epos 
++ slen_cte
+**--dataset**, type=str,default = 'msrvtt'  
+**--lastmodel** name of last saved model or '' or 'nosave'  
 
 
 
