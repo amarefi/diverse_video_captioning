@@ -41,7 +41,7 @@ optional arguments:
 setup variables in code
 ======
 
-\# video, feature vectors(1 file for each video) and captions addresses
+\# video, feature vectors(1 file for each video) and captions addresses  
 msvd_config = {'csv_path':'../../dataset/msvd/MSR Video Description Corpus.csv',  
   'video_path':'../../dataset/msvd/*.avi',  
   'video_resnet': 'vidfeat/msvd/res_2048/','video_resnet_1000': 'vidfeat/msvd/res_1000/',  
@@ -63,40 +63,40 @@ max_length = 32 # maximum sentence length
 
 file structure
 ======
-captioning 
-  ├--- capsc13main.py 
-  ├--- capsc13... .py
-  ├--- cocoeval.py
-  ├--- pycocoeval
-        ├--- diversity_eval.py
-        ├--- bleu 
-             ├--- 
-        ├--- meteor
-        ...
-  ├--- logs
+captioning  
+  ├--- capsc13main.py   
+  ├--- capsc13... .py  
+  ├--- cocoeval.py  
+  ├--- pycocoeval  
+        ├--- diversity_eval.py  
+        ├--- bleu   
+             ├---  
+        ├--- meteor  
+        ...  
+  ├--- logs  
+    
+  ├--- captions  
+    
+  ├--- checkpoints  
+        ├--- train  
+    
+  ├--- vidfeat  
+        ├--- msvd  
+              ├--- i3d  
+              ├--- res_1000  
+              ├--- res_2048  
+        ├--- msrvtt  
+    
+dataset  
+  ├--- msrvtt  
+        ├--- train_val_videodatainfo.json  
+        ├--- test_val_videodatainfo.json  
+        ├--- video9999.mp4  
+        ├--- ...  
+  ├--- msvd  
+        ├--- MSR Video Description Corpus.csv  
+        ├--- ...   
   
-  ├--- captions
-  
-  ├--- checkpoints
-        ├--- train
-  
-  ├--- vidfeat
-        ├--- msvd
-              ├--- i3d
-              ├--- res_1000
-              ├--- res_2048
-        ├--- msrvtt
-  
-dataset
-  ├--- msrvtt
-        ├--- train_val_videodatainfo.json
-        ├--- test_val_videodatainfo.json
-        ├--- video9999.mp4
-        ├--- ...
-  ├--- msvd
-        ├--- MSR Video Description Corpus.csv
-        ├--- ... 
-
 code structure 
 ========
 here 
