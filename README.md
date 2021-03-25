@@ -61,15 +61,44 @@ msrvtt_config = {'test_annot_json':'../../dataset/msrvtt/test_videodatainfo.json
 
 max_length = 32 # maximum sentence length
 
+file structure
+======
+![](/images/struct.png)
+
+
 flow chart
 =======
 ![](/images/flow.png)
 
+variable examples
+=====
+In [4]: Train['dict'][1] # train video 1: sentence, video number, caption number, tokenized sentence                                                                                                                              
+Out[4]: 
+[['in a kitchen a woman adds different ingredients into the pot and stirs it',  
+  '1',  
+  110460,  
+  array([ 3,  8,  4,  5,  4,  5,  7, 15,  6,  8,  4,  5, 11,  7, 12,  2,  0,  
+          0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0])],...]  
+          
+In [5]: Train['id_list'][1] # feature vector files. (shuffled)                                                                                                                           
+Out[5]:  
+['vidfeat/msrvtt/res_2048/6620.npz',  
+ 'vidfeat/msrvtt/i3d/6620.npz',  
+ '',  
+ '6620',  
+ '6620',  
+ '126198',  
+ 'vidfeat/msrvtt/whole_features/6620.npz']            
+ 
+In [7]: Train['cap_vector'][1]                                                                                                                        
+Out[7]:  
+array([   3,   22,    7,   84, 2567,   17, 1777,   15,   80,  973, 3470,
+          4,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+          0,    0,    0,    0,    0,    0,    0,    0,    0,    0],  
+      dtype=int32)  
 
-file structure
-======
-![](/images/struct.png)
-  
+ 
+
 code structure 
 ========
 here 
