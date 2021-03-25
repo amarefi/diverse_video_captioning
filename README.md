@@ -72,15 +72,15 @@ flow chart
 
 variable examples
 =====
-In [4]: Train['dict'][1] # train video 1: sentence, video number, caption number, tokenized sentence                                                                                                                              
+In [4]: **Train['dict'][1]** # train video 1: sentence, video number, caption number, tokenized sentence                                                                                                                              
 Out[4]: 
 [['in a kitchen a woman adds different ingredients into the pot and stirs it',  
-  '1',  
+  **'1'**,  
   110460,  
   array([ 3,  8,  4,  5,  4,  5,  7, 15,  6,  8,  4,  5, 11,  7, 12,  2,  0,  
           0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0])],...]  
           
-In [5]: Train['id_list'][1] # feature vector files. (shuffled)                                                                                                                           
+In [5]: **Train['id_list'][1]** # feature vector files. (shuffled)                                                                                                                           
 Out[5]:  
 ['vidfeat/msrvtt/res_2048/6620.npz',  
  'vidfeat/msrvtt/i3d/6620.npz',  
@@ -90,7 +90,7 @@ Out[5]:
  '126198',  
  'vidfeat/msrvtt/whole_features/6620.npz']            
  
-In [7]: Train['cap_vector'][1]                                                                                                                        
+In [7]: **Train['cap_vector'][1]** # the same order as id_list                                                                                                                        
 Out[7]:  
 array([   3,   22,    7,   84, 2567,   17, 1777,   15,   80,  973, 3470,
           4,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
@@ -101,7 +101,32 @@ array([   3,   22,    7,   84, 2567,   17, 1777,   15,   80,  973, 3470,
 
 code structure 
 ========
-here 
+**capsc13main.py** : main procedure  
+**capsc13dataset.py** : preparing datasets  
++ msvd_caption(...)
++ msrvtt_caption(...)
++ get_caption_list_train(c,single=False )
++ get_caption_list_test(c )
++ repeat_remainder_batch(dic, testbatchsize)
++ caption_scorer_dataset(cap_sc_list)
+
+**capsc13data.py** : tokenizing sentences  
++ caption_process(path,top_k = 12000)
++ map_func(paths, cap) # gets an item of Train['id_list'] and returns I3D and Resnet tensors
+
+**capsc13model.py** : tensorflow models  
++ Encoder4 class (dim,lstm_dim,dropout, use_pos)
++ RNN_Decoder class (embedding_dim, units, top_k, fc2_type,layernorm,dropout,recurrent_do,feature_do, cell_type,embedding_layer=None )
++ Caption_scorer class
++ training class (decoder,encoder,opt,tkn,RL,posencoder = None,i3dencoder = None,pos_do = 0)
++ testing class (decoder,encoder,loss_object,tkn,beam=1,cap_sc=None,i3dencoder = None)
+
+**capsc13eval.py** : calculating scores  
++ calculate_diversity(generated_dict,methods, topX=0, scoredict=None )
++ calculate_scores(generated_dict,meteor=True, topX=0, scoredict=None )
++ test_score(ep, test_obj, addr,test_desired_length,testds, BATCH_SIZE, random_count=None)
+
+
 
 method description
 ========
