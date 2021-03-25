@@ -61,6 +61,11 @@ msrvtt_config = {'test_annot_json':'../../dataset/msrvtt/test_videodatainfo.json
 
 max_length = 32 # maximum sentence length
 
+flow chart
+=======
+![](/images/flow.png)
+
+
 file structure
 ======
 ![](/images/struct.png)
