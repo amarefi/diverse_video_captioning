@@ -101,14 +101,24 @@ array([   3,   22,    7,   84, 2567,   17, 1777,   15,   80,  973, 3470,
 
 code structure 
 ========
+**capsc13preprocess_resnet.py** : extracting resnet features  
+setup variables: dsrate(down sampling rate), RGB(whether to read videos RGB or BGR),  
+bufsize(batch of frames used for calculating tensors)  
+arguments: --cpu --dataset
+**capsc13preprocessi3d.py** : like above  
+**capsc13vae.py** : training Variational AutoEncoder  
+a sequence of POS tags for each sentence is available (using NLTK package)  
+we train a VAE to embed this sequence data in a fixed size vector  
+\----
+
 **capsc13main.py** : main procedure  
 **capsc13dataset.py** : preparing datasets  
 + msvd_caption(...)
 + msrvtt_caption(...)
 + get_caption_list_train(c,single=False )
 + get_caption_list_test(c )
-+ repeat_remainder_batch(dic, testbatchsize)
-+ caption_scorer_dataset(cap_sc_list)
++ repeat_remainder_batch(dic, testbatchsize) # last batch doesnt have a size of batchsize, so we need to repeat some data to avoid errors
++ caption_scorer_dataset(cap_sc_list)   
 
 **capsc13data.py** : tokenizing sentences  
 + caption_process(path,top_k = 12000)
@@ -122,9 +132,12 @@ code structure
 + testing class (decoder,encoder,loss_object,tkn,beam=1,cap_sc=None,i3dencoder = None)
 
 **capsc13eval.py** : calculating scores  
-+ calculate_diversity(generated_dict,methods, topX=0, scoredict=None )
 + calculate_scores(generated_dict,meteor=True, topX=0, scoredict=None )
+generated_dict may contain more than 1 sentence for each video. (pos, trainpos, ... scenarios)
+this function puts data in a correct format(1 candidate sentence:: some reference sentences)
++ calculate_diversity(generated_dict,methods, topX=0, scoredict=None )
 + test_score(ep, test_obj, addr,test_desired_length,testds, BATCH_SIZE, random_count=None)
+
 
 
 
