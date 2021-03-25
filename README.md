@@ -142,13 +142,17 @@ generated (diverse) sentences using model. then puts them in generated_dict and 
 
 
 
-method description
+Method description
 ========
-now
+we use a simple encoder-decoder architecture with Resnet+LSTM and I3D features for encoder and a LSTM for decoder. ("normal" scenario in code)  
+  
+![](/images/basemodel-1.png)  
+In MSRVTT and MSVD datasets, each video has multiple reference sentences. To generate diverse sentences, we train the model to make syntactically different sentences. So we use a syntax vector in decoder input in training phase and use a (proper) random vector in testing phase. we either use sentence length or a POS vector (embedded with a VAE model) as syntax vector.   
+![](/images/diversemodel-1.png)  
 
 
 
-abstract
+Abstract
 ========
 
 In recent years, the simultaneous analysis of image and text by artificial intelligence has gained much attention. Video description is one of the topics used to help the blind, automate video content analysis, and more. This issue is usually examined in the context of supervised learning and is very similar to image description and machine translation.  
