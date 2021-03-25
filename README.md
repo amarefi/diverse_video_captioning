@@ -63,39 +63,7 @@ max_length = 32 # maximum sentence length
 
 file structure
 ======
-captioning  
-  ├--- capsc13main.py   
-  ├--- capsc13... .py  
-  ├--- cocoeval.py  
-  ├--- pycocoeval  
-        ├--- diversity_eval.py  
-        ├--- bleu   
-             ├---  
-        ├--- meteor  
-        ...  
-  ├--- logs  
-    
-  ├--- captions  
-    
-  ├--- checkpoints  
-        ├--- train  
-    
-  ├--- vidfeat  
-        ├--- msvd  
-              ├--- i3d  
-              ├--- res_1000  
-              ├--- res_2048  
-        ├--- msrvtt  
-    
-dataset  
-  ├--- msrvtt  
-        ├--- train_val_videodatainfo.json  
-        ├--- test_val_videodatainfo.json  
-        ├--- video9999.mp4  
-        ├--- ...  
-  ├--- msvd  
-        ├--- MSR Video Description Corpus.csv  
-        ├--- ...   
+![](/images/struct.png)
   
 code structure 
 ========
