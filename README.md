@@ -146,16 +146,16 @@ Method description
 ========
 we use a simple encoder-decoder architecture with Resnet+LSTM and I3D features for encoder and a LSTM for decoder. ("normal" scenario in code)  
   
-![](/images/basemodel-1.png)  
+![](/images/basemodel-1.png =300x)  
 In MSRVTT and MSVD datasets, each video has multiple reference sentences. To generate diverse sentences, we train the model to make syntactically different sentences. So we use a syntax vector in decoder input in training phase and use a (proper) random vector in testing phase. we either use sentence length or a POS vector (embedded with a VAE model) as syntax vector.   
   
-![](/images/diversemodel-1.png)  
+![](/images/diversemodel-1.png =300x)  
   
 using POS vector  
-![](/images/posencoder1-1.png)  
+![](/images/posencoder1-1.png =200x)  
   
 using sentence length vector  
-![](/images/posencoder3-1.png)  
+![](/images/posencoder3-1.png =200x)  
   
 
 
