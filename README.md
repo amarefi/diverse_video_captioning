@@ -132,11 +132,12 @@ we train a VAE to embed this sequence data in a fixed size vector
 + testing class (decoder,encoder,loss_object,tkn,beam=1,cap_sc=None,i3dencoder = None)
 
 **capsc13eval.py** : calculating scores  
-+ calculate_scores(generated_dict,meteor=True, topX=0, scoredict=None )
-generated_dict may contain more than 1 sentence for each video. (pos, trainpos, ... scenarios)
-this function puts data in a correct format(1 candidate sentence:: some reference sentences)
++ calculate_scores(generated_dict,meteor=True, topX=0, scoredict=None )  
+generated_dict may contain more than 1 sentence for each video. (pos, trainpos, ... scenarios)  
+this function puts data in a correct format(1 candidate sentence:: some reference sentences)  
 + calculate_diversity(generated_dict,methods, topX=0, scoredict=None )
-+ test_score(ep, test_obj, addr,test_desired_length,testds, BATCH_SIZE, random_count=None)
++ test_score(ep, test_obj, addr,test_desired_length,testds, BATCH_SIZE, random_count=None)  
+generated (diverse) sentences using model. then puts them in generated_dict and calls calculate_...()  
 
 
 
