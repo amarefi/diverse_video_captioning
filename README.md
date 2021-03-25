@@ -38,8 +38,64 @@ optional arguments:
 **--dataset**, type=str,default = 'msrvtt' # msrvtt or msvd  
 **--lastmodel** name of last saved model or '' or 'nosave'  
 
+setup variables in code
+======
 
+\# video, feature vectors(1 file for each video) and captions addresses
+msvd_config = {'csv_path':'../../dataset/msvd/MSR Video Description Corpus.csv',  
+  'video_path':'../../dataset/msvd/*.avi',  
+  'video_resnet': 'vidfeat/msvd/res_2048/','video_resnet_1000': 'vidfeat/msvd/res_1000/',  
+  'video_i3d': 'vidfeat/msvd/i3d/', 'video_i3d_clips': 'vidfeat/msvd/i3d_clips/',   
+  'cap_data':'vidfeat/msvd/msvd_captions',  
+  'whole_features': 'vidfeat/msvd/whole_features/',  
+  'latentPOS_path':'vidfeat/msvd/msvdLATENT_50' }  
+    
+msrvtt_config = {'test_annot_json':'../../dataset/msrvtt/test_videodatainfo.json',  
+  'train_annot_json': '../../dataset/msrvtt/train_val_videodatainfo.json',  
+  'video_path':'../../dataset/msrvtt/*.avi',  
+  'video_resnet': 'vidfeat/msrvtt/res_2048/','video_resnet_1000': 'vidfeat/msrvtt/res_1000/video',  
+  'video_i3d': 'vidfeat/msrvtt/i3d/',  'video_i3d_clips': 'vidfeat/msrvtt/i3d_clips/video',   
+  'cap_data':'vidfeat/msrvtt/msrvtt_captions_valid7percent',  
+  'whole_features': 'vidfeat/msrvtt/whole_features/' ,  
+  'latentPOS_path':'vidfeat/captionPOSlatent'}  
 
+max_length = 32 # maximum sentence length
+
+file structure
+======
+captioning 
+  ├--- capsc13main.py 
+  ├--- capsc13... .py
+  ├--- cocoeval.py
+  ├--- pycocoeval
+        ├--- diversity_eval.py
+        ├--- bleu 
+             ├--- 
+        ├--- meteor
+        ...
+  ├--- logs
+  
+  ├--- captions
+  
+  ├--- checkpoints
+        ├--- train
+  
+  ├--- vidfeat
+        ├--- msvd
+              ├--- i3d
+              ├--- res_1000
+              ├--- res_2048
+        ├--- msrvtt
+  
+dataset
+  ├--- msrvtt
+        ├--- train_val_videodatainfo.json
+        ├--- test_val_videodatainfo.json
+        ├--- video9999.mp4
+        ├--- ...
+  ├--- msvd
+        ├--- MSR Video Description Corpus.csv
+        ├--- ... 
 
 code structure 
 ========
