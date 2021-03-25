@@ -1,4 +1,4 @@
-# diverse video captioning using LSTMs and POS
+# Diverse Video Captioning using LSTMs and POS
 
 introduction
 =======
